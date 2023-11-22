@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Titan+One&display=swap');
+
+:root {
+    --primary-green: #23ce6b;
+    --second-green: #16c172;
+    --primary-gray: #403d39;
+    --primary-black: #252422;
+    --white: #fff;
+    --gray: #707070;
+    --black: #353535;
+}
+
+* {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-family: Gabarito, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* Header */
+header {
+    background-color: var(--black);
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    margin-left: 12vh;
+    margin-right: 12vh;
+}
+
+.header-logo {
+    max-width: 75%;
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    align-self: center;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.navbar a {
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    font-size: 22px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.navbar a::before {
+    background-color: var(--primary-green);
+    display: block;
+    position: absolute;
+    height: 0.15em;
+    width: 100%;
+    content: "";
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.navbar a:hover::before {
+    transform: scaleX(1);
+}
+
+/* Main */
+main {
+    background-image: url(/images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 100vh;
+}
+
+.main-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Main title */
+.main-container h1 {
+    color: var(--white);
+    font-family: "Titan One", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13vh;
+    letter-spacing: 15px;
+    text-shadow: 4px 0 var(--black),
+    -4px 0 var(--black),
+    0 4px var(--black),
+    0 -4px var(--black),
+    2px 2px var(--black),
+    -2px -2px var(--black),
+    2px -2px var(--black),
+    -2px 2px var(--black);
+}
+
+/* Main paragraph */
+.main-container p {
+    color: var(--white);
+    padding: 1em;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    text-shadow: 2px 0 var(--gray),
+    -2px 0 var(--gray),
+    0 2px var(--gray),
+    0 -2px var(--gray),
+    1px 1px var(--gray),
+    -1px -1px var(--gray),
+    1px -1px var(--gray),
+    -1px 1px var(--gray);
+}
+
+/* IP button */
+.btn-ip {
+    background-color: var(--second-green);
+    color: var(--primary-black);
+    padding: 9px 25px;
+    border-radius: 100vh;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.btn-ip:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transform: scale(108%);
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--black);
+}
+
+footer h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+footer p, a {
+    color: var(--white);
+    font-size: 18px;
+    letter-spacing: 0.3px;
+}
+
+footer a:hover {
+    color: var(--primary-green);
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.footer-container-info {
+    display: flex;
+    justify-content: space-between;
+    min-height: 200px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-section-about-us {
+    min-height: 200px;
+    width: 30%;
+    margin-right: 5%;
+    text-align: justify;
+}
+
+.footer-section-logo {
+    display: flex;
+    min-height: 200px;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    width: 50%;
+    object-fit: contain;
+}
+
+.footer-section-links {
+    height: 200px;
+    width: 30%;
+    margin-left: 5%;
+}
+
+.footer-section-links li {
+    color: var(--second-green);
+    margin-top: 4%;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+/* Copyright */
+.footer-container-copyright {
+    border-top: dashed var(--second-green);
+    display: flex;
+    min-height: 30px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
