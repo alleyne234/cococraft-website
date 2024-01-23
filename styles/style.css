@@ -77,7 +77,7 @@ header {
     content: "";
     bottom: 0;
     left: 0;
-    border-radius: 10px;
+    border-radius: 10rem;
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
@@ -127,7 +127,7 @@ main {
 
 .main-container {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -137,7 +137,7 @@ main {
 .main-container h1 {
     color: var(--white);
     font-family: "Titan One", Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 13vh;
+    font-size: 10vw;
     letter-spacing: 15px;
     text-shadow: 4px 0 var(--black),
     -4px 0 var(--black),
@@ -152,7 +152,7 @@ main {
 /* Main paragraph */
 .main-container p {
     color: var(--white);
-    padding: 1em;
+    padding: 2em;
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 0.3px;
@@ -171,7 +171,7 @@ main {
     background-color: var(--second-green);
     color: var(--primary-black);
     padding: 9px 25px;
-    border-radius: 100vh;
+    border-radius: 10rem;
     text-transform: uppercase;
     font-size: 30px;
 }
@@ -274,7 +274,7 @@ footer a:hover {
 
 ::-webkit-scrollbar-thumb {
     background: var(--gray);
-    border-radius: 10px;
+    border-radius: 10rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -290,10 +290,6 @@ footer a:hover {
         justify-content: center;
     }
 
-    .main-container h1 {
-        font-size: 10vh;
-    }
-    
     .footer-section-about-us {
         width: 55%;
     }
