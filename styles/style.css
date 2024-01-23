@@ -184,6 +184,11 @@ main {
     cursor: pointer;
 }
 
+.btn-ip:active {
+    background-color: var(--second-green);
+    transform: scale(1.1);
+}
+
 /* Footer */
 footer {
     background-color: var(--black);
