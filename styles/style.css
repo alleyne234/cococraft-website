@@ -263,6 +263,24 @@ footer a:hover {
     justify-content: center;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--white);
+}
+
 @media screen and (max-width: 800px) {
     .header-logo {
         display: none;
