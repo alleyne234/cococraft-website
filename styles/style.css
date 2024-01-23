@@ -46,6 +46,7 @@ header {
 /* Navbar */
 .navbar {
     align-self: center;
+
 }
 
 .navbar li {
@@ -79,6 +80,35 @@ header {
 
 .navbar a:hover::before {
     transform: scaleX(1);
+}
+
+/* Dropdown menu */
+.dropdown .dropbtn {
+    background-color: var(--black);
+    border: none;
+    color: var(--white);
+    font-size: 22px;
+    outline: none;
+}
+
+.dropdown-content {
+    background-color: var(--primary-gray);
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--white);
+    display: block;
+    margin: 6px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Main */
