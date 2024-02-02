@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Titan+One&display=swap');
 
+
+/***** GENERAL *****/
 :root {
     --primary-green: #23ce6b;
     --second-green: #16c172;
@@ -25,7 +27,8 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
+
+/***** HEADER *****/
 header {
     background-color: var(--black);
     align-items: center;
@@ -115,7 +118,8 @@ header {
     display: block;
 }
 
-/* Main */
+
+/***** MAIN *****/
 main {
     background-image: url(../images/background.png);
     background-size: cover;
@@ -133,7 +137,7 @@ main {
     text-align: center;
 }
 
-/* Main title */
+/* main title */
 .main-container h1 {
     color: var(--white);
     font-family: "Titan One", Verdana, Geneva, Tahoma, sans-serif;
@@ -149,7 +153,7 @@ main {
     -2px 2px var(--black);
 }
 
-/* Main paragraph */
+/* main paragraph */
 .main-container p {
     color: var(--white);
     padding: 2em;
@@ -189,7 +193,8 @@ main {
     transform: scale(1.1);
 }
 
-/* Footer */
+
+/***** FOOTER *****/
 footer {
     background-color: var(--black);
 }
@@ -258,7 +263,7 @@ footer a:hover {
     list-style-position: inside;
 }
 
-/* Copyright */
+/* copyright */
 .footer-container-copyright {
     border-top: dashed var(--second-green);
     display: flex;
@@ -268,7 +273,7 @@ footer a:hover {
     justify-content: center;
 }
 
-/* Scrollbar */
+/* scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -286,6 +291,8 @@ footer a:hover {
     background: var(--white);
 }
 
+
+/***** RESPONSIVE *****/
 @media screen and (max-width: 800px) {
     .header-logo {
         display: none;
