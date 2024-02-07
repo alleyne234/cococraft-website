@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Accueil - CocoCraft</title>
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="images/logo.png">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/main.js"></script>
     </head>
@@ -12,22 +12,33 @@
     <body>
         <header>
             <div class="header-container">
-                <a href="https://site.cococraft.fr/"><img class="header-logo" src="images/favicon.ico" alt="CocoCraft logo"></a>
+                <a href="https://site.cococraft.fr/"><img class="header-logo" src="images/logo.png" alt="CocoCraft logo"></a>
             
                 <nav class="navbar">
                     <ul>
-                        <li><a href="https://site.cococraft.fr/">Accueil</a></li>
+                        <li><a href="https://site.cococraft.fr/" class="welcome_page">Accueil</a></li>
                         <li><a href="https://wiki.cococraft.fr/" target="_blank">Wiki</a></li>
                         <li>
                             <div class="dropdown">
-                                <button class="dropbtn">Cartes</button>
+                                <button class="dropbtn" id="maps">Cartes</button>
                                 <div class="dropdown-content">
-                                    <a href="http://map.cococraft.fr:42099/" target="_blank">Créatif</a>
-                                    <a href="http://map.cococraft.fr:42115/" target="_blank">Survie</a>
+                                    <a href="http://map.cococraft.fr:42099/" target="_blank" class="mode1">Créatif</a>
+                                    <a href="http://map.cococraft.fr:42115/" target="_blank" class="mode2">Survie</a>
                                 </div>
                             </div>
                         </li>
                         <li><a href="https://discord.com/invite/6F82UjeTeK" target="_blank">Discord</a></li>
+                        <li>
+                            <div class="langage">
+                                <div class="dropdown_lang">
+                                    <button class="dropbtn2" id="langues">Langues</button>
+                                    <div class="dropdown2-content">
+                                        <a href="#" langage="francais" class="active">FRA</a>
+                                        <a href="#" langage="anglais">ENG</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -36,12 +47,10 @@
         <main>
             <div class="main-container">
                 <h1>CocoCraft</h1>
-
-                <p>
+                <p class="description">
                     Parcourez les rivages paradisiaques,<br>
                     façonnez des instants mémorables dans cette oasis tropicale.
                 </p>
-
                 <button class="btn-ip" onclick="copyText('play.cococraft.fr')">play.cococraft.fr</button>
             </div>
         </main>
@@ -50,31 +59,95 @@
             <div class="footer-container-info">
                 <section class="footer-section-about-us">
                     <h3>À propos de</h3>
-
-                    <p>CocoCraft, né lors d'un cours de SVT en 2018 et nommé ainsi le 19 août 2021,
+                    <p class="about_us">CocoCraft, né lors d'un cours de SVT en 2018 et nommé ainsi le 19 août 2021,
                         est bien plus qu'un simple serveur Minecraft, c'est l'histoire de deux amis
                         qui ont décidé de créer cet endroit afin de donner vie à leurs moments perdus.
                         La créativité, l'aventure et l’amitié se rencontrent ici pour créer des moments inoubliables.</p>
                 </section>
                 
                 <section class="footer-section-logo">
-                    <img class="footer-logo" src="images/favicon.ico" alt="CocoCraft logo">
+                    <img class="footer-logo" src="images/logo.png" alt="CocoCraft logo">
                 </section>
 
                 <section class="footer-section-links">
-                    <h3>Liens utiles</h3>
-
-                    <ul>
-                        <li><a href="https://wiki.cococraft.fr/reglement" target="_blank">Règlement en jeu</a></li>
-                        <li><a href="https://wiki.cococraft.fr/" target="_blank">Wiki</a></li>
-                        <li><a href="https://wiki.cococraft.fr/informations/le-staff" target="_blank">Liste du staff</a></li>
-                    </ul>
+                    <h3 class="links">Liens utiles</h3>
+                        <ul>
+                            <li><a href="https://wiki.cococraft.fr/reglement" target="_blank" class="rules">Règlement en jeu</a></li>
+                            <li><a href="https://wiki.cococraft.fr/" target="_blank">Wiki</a></li>
+                            <li><a href="https://wiki.cococraft.fr/informations/le-staff" target="_blank" class="staff">Liste du staff</a></li>
+                        </ul>
                 </section>
             </div>
 
             <div class="footer-container-copyright">
-                <p>Copyright © 2021-2023 CocoCraft Team</p>
+                <p>Copyright © 2021-2024 CocoCraft Team / Logo by Dalle.E</p>
             </div>
         </footer>
+        <script>
+            const langEL = document.querySelector('.navbar','main','footer');
+            const link = document.querySelectorAll('a','button','p');
+            const wpEl = document.querySelector('.welcome_page');
+            const mapsEL = document.querySelector('#maps');
+            const mode1EL = document.querySelector('.mode1');
+            const mode2EL = document.querySelector('.mode2');
+            const langdiff = document.querySelector('#langues');
+            const descr = document.querySelector('.description');
+            const about = document.querySelector('.about_us');
+            const rule = document.querySelector('.rules');
+            const staffEL = document.querySelector('.staff');
+            const lien_utile = document.querySelector('.links');
+
+            link.forEach(el =>{
+                el.addEventListener('click', () =>{
+                langEL.querySelector('.active').classList.remove('active');
+                el.classList.add('active');
+                const attr = el.getAttribute('langage');
+
+                wpEl.textContent = data[attr].welcome_page;
+                mode1EL.textContent = data[attr].mode1;
+                mode2EL.textContent = data[attr].mode2;
+                mapsEL.textContent = data[attr].maps;
+                langdiff.textContent = data[attr].langues
+                descr.textContent = data[attr].description
+                about.textContent = data[attr].about_us
+                rule.textContent = data[attr].rules
+                staffEL.textContent = data[attr].staff
+                lien_utile.textContent = data[attr].links
+                });
+            });
+
+            var data = {
+                    "anglais":
+                    {
+                        "welcome_page": "Welcome",
+                        "maps" : "Maps",
+                        "mode1" : "Creative",
+                        "mode2" : "Survival",
+                        "langues" : "Langages",
+                        "description" :
+                            "Stroll along the shores of paradise and create memorable moments in this tropical oasis.",
+                        "about_us" : 
+                            "CocoCraft, born in an biology class in 2018 and named after it on 19 August 2021, is much more than just a Minecraft server. It's the story of two friends who decided to create this place to bring their lost moments to life. Creativity, adventure and friendship meet here to create unforgettable moments.",
+                        "links" : "Useful links", 
+                        "rules" : "Rules in games",
+                        "staff": "Member of staff",
+                    },
+                    "francais":
+                    {
+                        "welcome_page": "Accueil",
+                        "maps" : "Cartes",
+                        "mode1" : "Créatif",
+                        "mode2" : "Survie",
+                        "langues" : "Langues",
+                        "description" :
+                            "Parcourez les rivages paradisiaques,façonnez des instants mémorables dans cette oasis tropicale.",
+                        "about_us" : 
+                            "CocoCraft, né lors d'un cours de SVT en 2018 et nommé ainsi le 19 août 2021 est bien plus qu'un simple serveur Minecraft, c'est l'histoire de deux amis qui ont décidé de créer cet endroit afin de donner vie à leurs moments perdus.La créativité, l'aventure et l’amitié se rencontrent ici pour créer des moments inoubliables.",
+                        "links" : "Liens utiles",
+                            "rules" : "Règles en jeux",
+                        "staff" : "Liste du staff"
+                    }   
+                }
+        </script>
     </body>
 </html>
